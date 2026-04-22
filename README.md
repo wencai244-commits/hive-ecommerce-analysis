@@ -187,9 +187,9 @@ docker-hive-master/
 技术栈
 | 组件 | 版本 |
 |------|------|
-| Hive | 2.3.2 |
+| Docker | 28.4.0 |
 | Hadoop | 2.7.4 |
-| Docker | 20.10+ |
+| Hive | 2.3.2 |
 | PostgreSQL | Metastore |
 
 作者
