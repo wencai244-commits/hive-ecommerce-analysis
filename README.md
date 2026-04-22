@@ -130,6 +130,8 @@ SELECT * FROM sellers_clean3 LIMIT 10;
 | c0f3eea2e14555b6faeea3dd58c1b1c3 | "04195" | sao paulo | SP |
 | "51a04a8a6bdcb23deccc82b0b80742cf" | "12914" | braganca paulista | SP |
 | c240c4061717ac1806ae6ee72be3533b | "20920" | rio de janeiro | RJ |
+
+
 -- 去重查看
 SELECT DISTINCT * FROM sellers_clean2;
 （省略部分）
@@ -164,30 +166,25 @@ GROUP BY seller_zip_code_prefix
 ORDER BY cnt DESC 
 LIMIT 10;
 ```
-## 项目结构
-
+项目结构
 docker-hive-master/
 ├── data/                    # 数据文件目录
 │   └── olist_sellers_dataset.csv
 ├── conf/                    # Hive 配置文件
-├── gaodu/                   # 分析相关文件
 ├── docker-compose.yml       # Docker 编排文件
 ├── Dockerfile               # Docker 镜像构建文件
 └── README.md               # 项目说明文档
 
-## 注意事项
-
+注意事项
 1. 大文件处理：原始数据文件（如 2019-Oct.csv 约 3.13GB）未上传到 GitHub，如需使用请自行下载
 2. 分隔符问题：CSV 文件使用逗号 `,` 作为分隔符
 3. 表头处理：原始数据包含表头行，已在视图中过滤
 4. 执行引擎警告：`Hive-on-MR is deprecated` 是正常提示，不影响查询结果
 
-## 数据源
-
+数据源
 [Olist Brazilian Ecommerce Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
-## 🛠️ 技术栈
-
+技术栈
 | 组件 | 版本 |
 |------|------|
 | Hive | 2.3.2 |
@@ -195,5 +192,5 @@ docker-hive-master/
 | Docker | 20.10+ |
 | PostgreSQL | Metastore |
 
-## 作
+作者
 wencai244-commits
