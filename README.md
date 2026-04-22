@@ -95,22 +95,18 @@ INTO TABLE sellers;
 
 ### 8. 验证数据加载
 SELECT * FROM sellers LIMIT 10;
-# 输出：
-``markdown
-+-------------------------------------+---------------------------------+----------------------+-----------------------+
-|          sellers.seller_id          | sellers.seller_zip_code_prefix  | sellers.seller_city  | sellers.seller_state  |
-+-------------------------------------+---------------------------------+----------------------+-----------------------+
-| "seller_id"                         | "seller_zip_code_prefix"        | "seller_city"        | "seller_state"        |
-| "3442f8959a84dea7ee197c632cb2df15"  | "13023"                         | campinas             | SP                    |
-| d1b65fc7debc3361ea86b5f14c68d2e2    | "13844"                         | mogi guacu           | SP                    |
-| ce3ad9de960102d0677a81f5d0bb7b2d    | "20031"                         | rio de janeiro       | RJ                    |
-| c0f3eea2e14555b6faeea3dd58c1b1c3    | "04195"                         | sao paulo            | SP                    |
-| "51a04a8a6bdcb23deccc82b0b80742cf"  | "12914"                         | braganca paulista    | SP                    |
-| c240c4061717ac1806ae6ee72be3533b    | "20920"                         | rio de janeiro       | RJ                    |
-| e49c26c3edfa46d227d5121a6b6e4d37    | "55325"                         | brejao               | PE                    |
-| "1b938a7ec6ac5061a66a3766e0e75f90"  | "16304"                         | penapolis            | SP                    |
-| "768a86e36ad6aae3d03ee3c6433d61df"  | "01529"                         | sao paulo            | SP                    |
-+-------------------------------------+---------------------------------+----------------------+-----------------------+
+# 输出：(省略)
+| seller_id | seller_zip_code_prefix | seller_city | seller_state |
+|-----------|------------------------|-------------|--------------|
+| "3442f8959a84dea7ee197c632cb2df15" | "13023" | campinas | SP |
+| d1b65fc7debc3361ea86b5f14c68d2e2 | "13844" | mogi guacu | SP |
+| ce3ad9de960102d0677a81f5d0bb7b2d | "20031" | rio de janeiro | RJ |
+| c0f3eea2e14555b6faeea3dd58c1b1c3 | "04195" | sao paulo | SP |
+| "51a04a8a6bdcb23deccc82b0b80742cf" | "12914" | braganca paulista | SP |
+| c240c4061717ac1806ae6ee72be3533b | "20920" | rio de janeiro | RJ |
+| e49c26c3edfa46d227d5121a6b6e4d37 | "55325" | brejao | PE |
+| "1b938a7ec6ac5061a66a3766e0e75f90" | "16304" | penapolis | SP |
+| "768a86e36ad6aae3d03ee3c6433d61df" | "01529" | sao paulo | SP |
 
 ### 9. 数据清洗
 
@@ -126,28 +122,25 @@ WHERE seller_id NOT IN ('seller_id', '"seller_id"')
 -- 查看清洗后数据
 SELECT * FROM sellers_clean3 LIMIT 10;
 （省略部分）
-+-------------------------------------+----------------------------------------+---------------------------------+------------------------------+
-|      sellers_clean2.seller_id       | sellers_clean2.seller_zip_code_prefix  |   sellers_clean2.seller_city    | sellers_clean2.seller_state  |
-+-------------------------------------+----------------------------------------+---------------------------------+------------------------------+
-| "seller_id"                         | "seller_zip_code_prefix"               | "seller_city"                   | "seller_state"               |
-| "3442f8959a84dea7ee197c632cb2df15"  | "13023"                                | campinas                        | SP                           |
-| d1b65fc7debc3361ea86b5f14c68d2e2    | "13844"                                | mogi guacu                      | SP                           |
-| ce3ad9de960102d0677a81f5d0bb7b2d    | "20031"                                | rio de janeiro                  | RJ                           |
-| c0f3eea2e14555b6faeea3dd58c1b1c3    | "04195"                                | sao paulo                       | SP                           |
-| "51a04a8a6bdcb23deccc82b0b80742cf"  | "12914"                                | braganca paulista               | SP                           |
-| c240c4061717ac1806ae6ee72be3533b    | "20920"                                | rio de janeiro                  | RJ                           |
+| seller_id | seller_zip_code_prefix | seller_city | seller_state |
+|-----------|------------------------|-------------|--------------|
+| "3442f8959a84dea7ee197c632cb2df15" | "13023" | campinas | SP |
+| d1b65fc7debc3361ea86b5f14c68d2e2 | "13844" | mogi guacu | SP |
+| ce3ad9de960102d0677a81f5d0bb7b2d | "20031" | rio de janeiro | RJ |
+| c0f3eea2e14555b6faeea3dd58c1b1c3 | "04195" | sao paulo | SP |
+| "51a04a8a6bdcb23deccc82b0b80742cf" | "12914" | braganca paulista | SP |
+| c240c4061717ac1806ae6ee72be3533b | "20920" | rio de janeiro | RJ |
 -- 去重查看
 SELECT DISTINCT * FROM sellers_clean2;
 （省略部分）
-+-------------------------------------+----------------------------------------+---------------------------------+------------------------------+
-|      sellers_clean2.seller_id       | sellers_clean2.seller_zip_code_prefix  |   sellers_clean2.seller_city    | sellers_clean2.seller_state  |
-+-------------------------------------+----------------------------------------+---------------------------------+------------------------------+
-| "0015a82c2db000af6aaaf3ae2ecb0532"  | "09080"                                | santo andre                     | SP                           |
-| "001cca7ae9ae17fb1caed9dfb1094831"  | "29156"                                | cariacica                       | ES                           |
-| "001e6ad469a905060d959994f1b41e4f"  | "24754"                                | sao goncalo                     | RJ                           |
-| "002100f778ceb8431b7a1020ff7ab48f"  | "14405"                                | franca                          | SP                           |
-| "003554e2dce176b5555353e4f3555ac8"  | "74565"                                | goiania                         | GO                           |
-| "004c9cd9d87a3c30c522c48c4fc07416"  | "14940"                                | ibitinga                        | SP                           |
+| seller_id | seller_zip_code_prefix | seller_city | seller_state |
+|-----------|------------------------|-------------|--------------|
+| "0015a82c2db000af6aaaf3ae2ecb0532" | "09080" | santo andre | SP |
+| "001cca7ae9ae17fb1caed9dfb1094831" | "29156" | cariacica | ES |
+| "001e6ad469a905060d959994f1b41e4f" | "24754" | sao goncalo | RJ |
+| "002100f778ceb8431b7a1020ff7ab48f" | "14405" | franca | SP |
+| "003554e2dce176b5555353e4f3555ac8" | "74565" | goiania | GO |
+| "004c9cd9d87a3c30c522c48c4fc07416" | "14940" | ibitinga | SP |
 
 ### 11. 数据分析查询
 
@@ -202,8 +195,5 @@ docker-hive-master/
 | Docker | 20.10+ |
 | PostgreSQL | Metastore |
 
-## 作者
-
+## 作
 wencai244-commits
-- 2026-04-22：部署到 GitHub
-```
