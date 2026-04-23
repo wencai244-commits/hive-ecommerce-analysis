@@ -1,8 +1,8 @@
 ### Docker Hive 电商数据分析项目
 基于 Docker 的 Hive 数据仓库项目，对 Olist 巴西电商卖家数据集进行完整的数据清洗与分析。
 ![Hive](https://img.shields.io/badge/Hive-2.3.2-yellow)
-![Docker](https://img.shields.io/badge/Docker-20.10-blue)
 ![Hadoop](https://img.shields.io/badge/Hadoop-2.7.4-green)
+![Docker](https://img.shields.io/badge/Docker-28.4.0-blue)
 
 ### 分析结果（核心成果）
 卖家按州分布（Top 5）
