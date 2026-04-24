@@ -91,6 +91,7 @@ STORED AS TEXTFILE;
 ### 7. 加载数据到表
 
 LOAD DATA INPATH '/data/retail/olist_sellers_dataset.csv'
+
 INTO TABLE sellers;
 
 ### 8. 验证数据加载
@@ -111,10 +112,15 @@ SELECT * FROM sellers LIMIT 10;
 ### 9. 数据清洗
 
 CREATE VIEW sellers_clean3 AS
+
 SELECT *
+
 FROM sellers
+
 WHERE seller_id NOT IN ('seller_id', '"seller_id"')
+
   AND seller_state IS NOT NULL
+  
   AND seller_state != '';
 
 ### 10. 验证清洗结果
