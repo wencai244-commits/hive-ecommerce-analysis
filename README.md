@@ -165,22 +165,33 @@ SELECT DISTINCT * FROM sellers_clean2;
 
 #### 按州统计卖家数量
 SELECT seller_state, COUNT(*) AS cnt 
+
 FROM sellers_clean3 
+
 GROUP BY seller_state 
+
 ORDER BY cnt DESC;
 
 #### 按城市统计（Top 10）
 SELECT seller_city, COUNT(*) AS cnt 
+
 FROM sellers_clean3 
+
 GROUP BY seller_city 
+
 ORDER BY cnt DESC 
+
 LIMIT 10;
 
 #### 按邮编前缀统计（Top 10）
 SELECT seller_zip_code_prefix, COUNT(*) AS cnt 
+
 FROM sellers_clean3 
+
 GROUP BY seller_zip_code_prefix 
+
 ORDER BY cnt DESC 
+
 LIMIT 10;
 ```
 项目结构
