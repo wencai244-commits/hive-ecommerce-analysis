@@ -72,20 +72,31 @@ beeline -u jdbc:hive2://localhost:10000
 
 ### 6. 创建数据库和表
 -- 使用数据库
+
 USE retail_db;
 
 -- 删除旧表
+
 DROP TABLE IF EXISTS sellers;
 
 -- 创建卖家表（分隔符为逗号）
+
 CREATE TABLE sellers (
+
     seller_id STRING,
+    
     seller_zip_code_prefix STRING,
+    
     seller_city STRING,
+    
     seller_state STRING
+
 )
+
 ROW FORMAT DELIMITED
+
 FIELDS TERMINATED BY ','
+
 STORED AS TEXTFILE;
 
 ### 7. 加载数据到表
